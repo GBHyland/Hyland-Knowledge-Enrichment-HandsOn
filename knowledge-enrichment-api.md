@@ -9,20 +9,24 @@ A folder already exists on the Virtual Machine desktop titled:```Knowledge Enric
 ```
 git clone https://github.com/GBHyland/Hyland-Knowledge-Enrichment-HandsOn.git
 ```
-3. Open the local directory that you just cloned and navigate to this path: ```./Hyland-Knowledge-Enrichment-handsOn/knowledge-enrichment-api/```.
-4. Open the Chrome browser and visit the Alfresco site bookmarked in the bookmark bar.
-5. At the Alfresco site, log in with the following username and password:```cicuser``` : ```password```.
-6. Navigate to the Shared Files directory by accessing the **Shared Files** link at the top of the page.
-7. Navigate into the folder titled: ```Intro to Knowledge Enrichment Class Docs```.
-8. Download the file here titled: ```.env```
-9. Move / Copy the dowloaded `.env`  file to the directory opened in step 3: ```./Hyland-Knowledge-Enrichment-handsOn/knowledge-enrichment-api/```.
-10. In terminal, enter the following command:
+3. Exit Terminal.
+4. Open the local directory that you just cloned and navigate to this path: ```./Hyland-Knowledge-Enrichment-handsOn/knowledge-enrichment-api/```.
+5. Open the Chrome browser and visit the Alfresco site bookmarked in the bookmark bar.
+6. At the Alfresco site, log in with the following username and password:```cicuser``` : ```password```.
+7. Navigate to the Shared Files directory by accessing the **Shared Files** link at the top of the page.
+8. Navigate into the folder titled: ```Intro to Knowledge Enrichment Class Docs```.
+9. Download the file here titled: ```.env```
+10. Move / Copy the dowloaded `.env`  file to the directory opened in step 3: ```./Hyland-Knowledge-Enrichment-handsOn/knowledge-enrichment-api/```.
+11. Right-click on the folder ```knowledge-enrichment-api``` and select **Git Bash** into the folder. A new Terminal window will open.
+12. Enter the following command in the Git Bash Terminal:
 ```
-cd .\Hyland-Knowledge-Enrichment-handsOn\knowledge-enrichment-api
+./run.sh
 ```
 
 
 ### Connect & Send HTTP Requests to the Knowledge Enrichment APIs:
+We'll use HTTPie application to send requests through the Java environment to the Knowedge Enrichment APIs.
+1. Open the HTTPie application that is pinned to the bottom task bar.
 
 **Get a summarization of services from the _available_actions_ api:**
 In HTTPie, start a new tab and use the following specifications for a new HTTP request:

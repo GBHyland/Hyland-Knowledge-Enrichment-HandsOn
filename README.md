@@ -5,4 +5,11 @@ This course will cover the following topics:
 - Hyland’s Knowledge Enrichment Service
 - Hands-On Demo – Engaging APIs
 
-When you're ready to begin, visit the [Knowledge Enrichment API Guide here](./knowledge-enrichment-api.md)
+When you're ready to begin the course, visit the [Knowledge Enrichment API Guide](./knowledge-enrichment-api.md)
+
+---
+
+**For Local Developers**
+If you're interested in developing this content on your own machine, get started [HERE](./local-env.md)
+
+---
