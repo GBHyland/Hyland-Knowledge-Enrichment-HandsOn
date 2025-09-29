@@ -67,7 +67,7 @@ You should receive a JSON reply similar to the following:
 
 
 
-**Get a list of actions from the API:**
+**Get a list of actions from the API:**  
 [API Guide Here](https://hyland.github.io/ContentIntelligence-Docs/KnowledgeEnrichment/Reference/Context%20API/Endpoints/get-available-process-content-actions). <br>
 Next, we'll send a simple **GET** request that will ask the API to return a list of actions that we may request to perform on uploaded documents. This ensures that we have the most up-to-date actions from the API itself.
 1. From the list of collections, select the request titled ```GET Receive available actions```. 
@@ -96,7 +96,7 @@ You should receive a JSON array reply of the available actions you may perform t
 
 ### Send a document for Summarization:
 
-**Get a Presigned URL**
+**Get a Presigned URL**  
 [API Guide Here](https://hyland.github.io/ContentIntelligence-Docs/KnowledgeEnrichment/Reference/Context%20API/Endpoints/get-a-presigned-url-for-uploading-a-file). <br>
 Sending a document for enrichment requires multiple API calls as outlined above. We'll run through a quick series of API calls to get a document summarization.
 The API expects the following:
@@ -136,7 +136,7 @@ The API expects the following:
 This API call does not return a value. Instead what you're looking for is the response code (200 OK). This code signifies that the request is successful and the API server has responded as required.
 
 
-**Tell the Context API to Process the Uploaded File:**
+**Tell the Context API to Process the Uploaded File:**  
 [API Guide Here](https://hyland.github.io/ContentIntelligence-Docs/KnowledgeEnrichment/Reference/Context%20API/Endpoints/process-content-asynchronously). <br>
 At this step of the process you have uploaded a file to the S3 storage bucket using a presigned URL. The context API does not automatically trigger processing of this file, since it does not yet know what actions you want to include in your processing (remember the available actions from before). Here, we'll ask the Context API to process the uploaded file and include actions we want executed. 
 The API expects the following:
@@ -174,7 +174,7 @@ This API call will return a _processingID_ in a JSON string. This value will be 
 ```
 
 
-**Get the Results from the Document Curation:**
+**Get the Results from the Document Curation:**  
 [API Guide Here](https://hyland.github.io/ContentIntelligence-Docs/KnowledgeEnrichment/Reference/Context%20API/Endpoints/get-content-processing-results). <br>
 Finally, we'll send an HTTP request to the Context API and ask for the results from the job we processed.
 The API expects the following:
