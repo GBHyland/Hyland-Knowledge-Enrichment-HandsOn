@@ -15,6 +15,14 @@ We'll perform a few steps to configure the Postman application with environment 
 3. On the left panel, **Collections** should be selected (select it if not). Click on the **Import** button above the left panel and upload the file downloaded in **step 1** titled ```CIC-KE-Collections```.
 4. On the left panel, select **Environment**. Click on the **Import** button above the left panel and upload the file downloaded in **step 1** titled ```CIC-KE-Environment```.
 
+Postman offers a variable environment and cataloging (collections) of HTTP calls: <br>
+**Collections:**  
+Saving HTTP calls into a catalogue so you can revisit and test your APIs. 
+**Environment:**  
+Store data in variables and use them to make a series of HTTP calls. 
+It also provides pre- and post- scripting, which you may use to GET values from an HTTP call and persist them into variables to be used in other calls. 
+This is the behavior we'll implement for this training.
+
 ---
 
 ### Send HTTP Requests to the Knowledge Enrichment APIs:
