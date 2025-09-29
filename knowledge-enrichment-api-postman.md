@@ -18,6 +18,7 @@ We'll perform a few steps to configure the Postman application with environment 
 ---
 
 ### Send HTTP Requests to the Knowledge Enrichment APIs:
+[API Guide Here](https://hyland.github.io/ContentIntelligence-Docs/KnowledgeEnrichment/Overview/Getting%20Started/api-interaction-flow). <br>
 Using Postman, we'll send requests directly to the Knowedge Enrichment APIs.
 You'll recall that sending a document for data enrichment requires multiple API requests sent in a specific order. Here's that breakdown once again:
 | Request       | Data Params       | Returns       |
@@ -31,7 +32,7 @@ You'll recall that sending a document for data enrichment requires multiple API 
 <br>
 
 **Get Authorization Credentials from Auth API:**  
-[API Guide Here](https://hyland.github.io/ContentIntelligence-Docs/KnowledgeEnrichment/Overview/Getting%20Started/authentication). 
+[API Guide Here](https://hyland.github.io/ContentIntelligence-Docs/KnowledgeEnrichment/Overview/Getting%20Started/authentication). <br>
 First, we'll request authorization to connect to the Knowledge Enrichment API.
 1. In Postman, ensure that **Collections** is selected from the left panel. You should see a catalogue of collections titled _CIC-KE-Collections_. 
 2. Toggle the _CIC-KE-Collections_ down to reveal the list of HTTP Requests. 
@@ -56,6 +57,7 @@ You should receive a JSON reply similar to the following:
 
 
 **Get a list of actions from the API:**
+[API Guide Here](https://hyland.github.io/ContentIntelligence-Docs/KnowledgeEnrichment/Reference/Context%20API/Endpoints/get-available-process-content-actions). <br>
 Next, we'll send a simple **GET** request that will ask the API to return a list of actions that we may request to perform on uploaded documents. This ensures that we have the most up-to-date actions from the API itself.
 1. From the list of collections, select the request titled ```GET Receive available actions```. 
    - This will open the new HTTP Request into a new tab in the main portion of the app.
@@ -84,6 +86,7 @@ You should receive a JSON array reply of the available actions you may perform t
 ### Send a document for Summarization:
 
 **Get a Presigned URL**
+[API Guide Here](https://hyland.github.io/ContentIntelligence-Docs/KnowledgeEnrichment/Reference/Context%20API/Endpoints/get-a-presigned-url-for-uploading-a-file). <br>
 Sending a document for enrichment requires multiple API calls as outlined above. We'll run through a quick series of API calls to get a document summarization.
 The API expects the following:
 - Bearer Token
@@ -123,6 +126,7 @@ This API call does not return a value. Instead what you're looking for is the re
 
 
 **Tell the Context API to Process the Uploaded File:**
+[API Guide Here](https://hyland.github.io/ContentIntelligence-Docs/KnowledgeEnrichment/Reference/Context%20API/Endpoints/process-content-asynchronously). <br>
 At this step of the process you have uploaded a file to the S3 storage bucket using a presigned URL. The context API does not automatically trigger processing of this file, since it does not yet know what actions you want to include in your processing (remember the available actions from before). Here, we'll ask the Context API to process the uploaded file and include actions we want executed. 
 The API expects the following:
 - Bearer Token
@@ -160,6 +164,7 @@ This API call will return a _processingID_ in a JSON string. This value will be 
 
 
 **Get the Results from the Document Curation:**
+[API Guide Here](https://hyland.github.io/ContentIntelligence-Docs/KnowledgeEnrichment/Reference/Context%20API/Endpoints/get-content-processing-results). <br>
 Finally, we'll send an HTTP request to the Context API and ask for the results from the job we processed.
 The API expects the following:
 - Bearer Token
