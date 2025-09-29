@@ -11,6 +11,6 @@ A code base that allows you to perform git repository requests, such as "cloning
 [Download here](https://git-scm.com/downloads)
 
 **Postman**  
-An application that sends HTTP requests.
+An application that sends HTTP requests. 
 [Download here](https://www.postman.com/downloads/)
-
+- Once downloaded you'll need to create a free account, which can be done using the icon in the top-right corner of the Postman app.

@@ -31,6 +31,7 @@ You'll recall that sending a document for data enrichment requires multiple API 
 <br>
 
 **Get Authorization Credentials from Auth API:**  
+[API Guide Here](https://hyland.github.io/ContentIntelligence-Docs/KnowledgeEnrichment/Overview/Getting%20Started/authentication)
 First, we'll request authorization to connect to the Knowledge Enrichment API.
 1. In Postman, ensure that **Collections** is selected from the left panel. You should see a catalogue of collections titled _CIC-KE-Collections_. 
 2. Toggle the _CIC-KE-Collections_ down to reveal the list of HTTP Requests. 
