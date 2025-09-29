@@ -23,7 +23,7 @@ Postman offers a variable environment and cataloging (collections) of HTTP calls
 **Environment:**  <br>
 - Store data in variables and use them to make a series of HTTP calls.  
 - It also provides pre- and post- scripting, which you may use to GET values from an HTTP call and persist them into the environment variables to be used in other calls.  
-<br>
+
 This is the behavior we'll implement for this training.
 
 ---
