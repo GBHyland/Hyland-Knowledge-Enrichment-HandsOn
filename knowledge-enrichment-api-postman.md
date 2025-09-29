@@ -28,9 +28,9 @@ You'll recall that sending a document for data enrichment requires multiple API 
 | Content Processing    | Bearer token, ObjectKey, actions    | JobID |
 | Request Results   | Bearer token, JobID | Results (JSON)    |
 
+<br>
 
-
-**Get Authorization Credentials from Auth API:**
+**Get Authorization Credentials from Auth API:**  
 First, we'll request authorization to connect to the Knowledge Enrichment API.
 1. In Postman, ensure that **Collections** is selected from the left panel. You should see a catalogue of collections titled _CIC-KE-Collections_. 
 2. Toggle the _CIC-KE-Collections_ down to reveal the list of HTTP Requests. 

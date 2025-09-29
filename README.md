@@ -1,11 +1,10 @@
-# Hyland Knowledge Enrichment HandsOn Course
-Welcome to the hands on demo of Hyland's Knowledge Enrichment API.
-This course will cover the following topics:
-- Knowledge Enrichment Core Concepts
-- Hyland’s Knowledge Enrichment Service
-- Hands-On Demo – Engaging APIs
+# Hyland Knowledge Enrichment - Engaging the APIs
+Welcome to this guide on how to engage with Hyland's Knowledge Enrichment API.
+This guide will cover the following topics:
+- Configuring necessary elements within the Content Innovation Cloud for Authorization
+- Deciphering the API Documentation and implementing proper API endpoints
+- Configuring and using an HTTP tool (Postman) to engage with the APIs
 
-When you're ready to begin the course, visit the [Knowledge Enrichment API Guide](./knowledge-enrichment-api-postman.md)
 
 ---
 
@@ -13,3 +12,10 @@ When you're ready to begin the course, visit the [Knowledge Enrichment API Guide
 If you're interested in developing this content on your own machine, get started [HERE](./local-env.md)
 
 ---
+
+
+Before you can engage with Knowledge Enrichment APIs, you'll first need a **Service User** and an **External Application** configured for Knowledge Enrichment in the Content Innovation Cloud.
+If you have not done this, [visit this guide first](./cic-config.md), otherwise skip this step and continue on.
+
+If you already have a **Service User** and an **External Application** configured for Knowledge Enrichment in the Content Innovation Cloud, you may start with the [Knowledge Enrichment API Guide](./knowledge-enrichment-api-postman.md).
+
