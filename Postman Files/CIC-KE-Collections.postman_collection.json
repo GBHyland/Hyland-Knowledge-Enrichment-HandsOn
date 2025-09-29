@@ -53,8 +53,20 @@
 							"if (response.presignedUrl) { \r",
 							"    // Alternatively, store as a collection variable\r",
 							"    pm.environment.set(\"presignedUrl\", response.presignedUrl);\r",
+							"    pm.environment.set(\"objectKey\", response.objectKey);\r",
 							"}\r",
 							"else {console.log('There was an error')}"
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
 						],
 						"type": "text/javascript",
 						"packages": {},
@@ -80,7 +92,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{baseURL}}/files/upload/presigned-url?contentType=image%2Fjpeg",
+					"raw": "{{baseURL}}/files/upload/presigned-url?contentType=application%2Fpdf",
 					"host": [
 						"{{baseURL}}"
 					],
@@ -92,7 +104,7 @@
 					"query": [
 						{
 							"key": "contentType",
-							"value": "image%2Fjpeg"
+							"value": "application%2Fpdf"
 						}
 					]
 				}
@@ -122,6 +134,17 @@
 						"packages": {},
 						"requests": {}
 					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
 				}
 			],
 			"request": {
@@ -143,7 +166,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n \"objectKeys\": [\"contents/4c9b66de-fc0b-4c43-8fb1-40efb689bf72/abd5b209-a380-400a-a392-4cc560008abc/abd5b209-a380-400a-a392-4cc560008abc\"],\n \"actions\": [\"image-description\",\"image-embeddings\",\"named-entity-recognition-image\"]\n}",
+					"raw": "{\n \"objectKeys\": [\"contents/4c9b66de-fc0b-4c43-8fb1-40efb689bf72/f1a589e1-b782-4ca9-ab51-a25a345d0946/f1a589e1-b782-4ca9-ab51-a25a345d0946\"],\n \"actions\": [\"actions-here\"]\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -171,7 +194,7 @@
 				"body": {
 					"mode": "file",
 					"file": {
-						"src": "/Users/greg.bousley/Documents/Hyland Main/CLIVE Stuff/DEV/ACS-AI/house-roof-dmg2.jpg"
+						"src": ""
 					}
 				},
 				"url": {
@@ -254,11 +277,26 @@
 							"}"
 						],
 						"type": "text/javascript",
-						"packages": {}
+						"packages": {},
+						"requests": {}
 					}
 				}
 			],
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{auth_token}}",
+							"type": "string"
+						},
+						{
+							"key": "undefined",
+							"type": "any"
+						}
+					]
+				},
 				"method": "POST",
 				"header": [],
 				"body": {
@@ -266,12 +304,12 @@
 					"urlencoded": [
 						{
 							"key": "client_id",
-							"value": "",
+							"value": "your-id",
 							"type": "default"
 						},
 						{
 							"key": "client_secret",
-							"value": "",
+							"value": "your-secret",
 							"type": "default"
 						},
 						{
