@@ -6,10 +6,6 @@ This guide is designed to get you set up with a local development environment to
 
 ### Download / Install the following:
 
-**Git**  
-A code base that allows you to perform git repository requests, such as "cloning" a github repository.
-[Download here](https://git-scm.com/downloads)
-
 **Postman**  
 An application that sends HTTP requests. 
 [Download here](https://www.postman.com/downloads/)
