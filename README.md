@@ -9,7 +9,8 @@ This guide will cover the following topics:
 ---
 
 **For Local Developers**
-If you're interested in developing this content on your own machine, get started [HERE](./local-env.md)
+If you're interested in developing this content on your own machine you'll need the Postman Application. This application allows you to send HTTP requests. [Download here](https://www.postman.com/downloads/)  
+- Once downloaded you'll need to create a free account, which can be done using the icon in the top-right corner of the Postman app.
 
 ---
 
