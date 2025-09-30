@@ -32,3 +32,11 @@ The above steps created both the Service User and the External Application neede
 6. A new drop-down field appears called **Environment**. Select **DEV** from this drop-down.
 7. Toggle down the **Application** drop-down field and select ```Data Curation API``` from the options.
 8. Press the **Save** button from the bottom-right corner of the page.
+
+---
+
+### Knowledge Enrichment API
+After completing the steps above, you're ready to engage with the API.
+[Knowledge Enrichment API Guide](./knowledge-enrichment-api-postman.md)
+
+---
