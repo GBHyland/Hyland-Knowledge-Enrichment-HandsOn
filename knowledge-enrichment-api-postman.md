@@ -13,10 +13,12 @@ We'll perform a few steps to configure the Postman application with environment 
      1. Select the orange **Sign Up For Free** button in top-right corner of the page.
      2. Fill out the signup form (use an email you have access to for verification) and press the **Create Free Account** button.
      3. Verify your account (check your email)
-     4. After verifying, you'll land on an AI page asking a question. Enter anything into the prompt and press the send button. You'll be taken to the HTTP main page. _Pause here - You're ready to go!_
+     4. After verifying, you'll land on an AI page asking a question. Enter anything into the prompt and press the send button. You **should** be taken to the HTTP Request page. _Pause here - You're ready to go!_
+     5. If you're taken to a dashboard page (where you see your account icon on the left panel), select the **My Workspace** link on the page to be taken to the HTTP Request page. _Pause here - You're ready to go!_
    - **Of course I have a Postman account!**
      1. Sign in. 
-     2. _Pause here - You're good to go!_
+     2. If you're taken to a dashboard page (where you see your account icon on the left panel), select the **My Workspace** link on the page to be taken to the HTTP Request page.
+     3. _Pause here - You're good to go!_
 2. Visit [this page within this github](./Postman%20Files/) to download the Postman imports for the _environment_ and _collections_.
 3. In postman within the left panel, **Collections** should be selected (select it if not). Click on the **Import** button above the left panel and upload the file downloaded in **step 1** titled ```CIC-KE-Collections```.
 4. On the left panel, select **Environment**. Click on the **Import** button above the left panel and upload the file downloaded in **step 1** titled ```CIC-KE-Environment```.
