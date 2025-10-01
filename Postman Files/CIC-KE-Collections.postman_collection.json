@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "9c1fdb82-88d7-47ea-836c-3473bb1513ca",
+		"_postman_id": "232c2786-80cb-4fa5-bfd3-08f62eb358d6",
 		"name": "CIC-KE-Collections",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "40985835"
@@ -124,7 +124,7 @@
 							"// Check if the response contains the token\r",
 							"if (response) { \r",
 							"    // Alternatively, store as a collection variable\r",
-							"    pm.environment.set(\"result_id\", response);\r",
+							"    pm.environment.set(\"jobID\", response);\r",
 							"    console.log(\"ResultID: \" + response);\r",
 							"} else {\r",
 							"    console.log(\"ResultID not found in response!\");\r",
@@ -166,7 +166,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n \"objectKeys\": [\"contents/4c9b66de-fc0b-4c43-8fb1-40efb689bf72/f1a589e1-b782-4ca9-ab51-a25a345d0946/f1a589e1-b782-4ca9-ab51-a25a345d0946\"],\n \"actions\": [\"actions-here\"]\n}",
+					"raw": "{\n \"objectKeys\": [\"contents/4c9b66de-fc0b-4c43-8fb1-40efb689bf72/62c4b370-6d87-46c6-820e-4c26366e82c3/62c4b370-6d87-46c6-820e-4c26366e82c3\"],\n \"actions\": [\"text-summarization\"]\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -226,14 +226,14 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{baseURL}}/content/process/{{result_id}}/results",
+					"raw": "{{baseURL}}/content/process/{{jobID}}/results",
 					"host": [
 						"{{baseURL}}"
 					],
 					"path": [
 						"content",
 						"process",
-						"{{result_id}}",
+						"{{jobID}}",
 						"results"
 					]
 				}
