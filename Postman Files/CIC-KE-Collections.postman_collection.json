@@ -7,6 +7,109 @@
 	},
 	"item": [
 		{
+			"name": "Authorize",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// Parse the response body",
+							"var response = pm.response.json();",
+							"",
+							"// Check if the response contains the token",
+							"if (response.access_token) { ",
+							"    // Alternatively, store as a collection variable",
+							"    pm.environment.set(\"auth_token\", response.access_token);",
+							"    console.log(\"Token stored successfully: \" + response.access_token);",
+							"} else {",
+							"    console.log(\"Token not found in response!\");",
+							"}"
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{auth_token}}",
+							"type": "string"
+						},
+						{
+							"key": "undefined",
+							"type": "any"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "client_id",
+							"value": "your-id",
+							"type": "default"
+						},
+						{
+							"key": "client_secret",
+							"value": "your-secret",
+							"type": "default"
+						},
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "default"
+						},
+						{
+							"key": "scope",
+							"value": "environment_authorization",
+							"type": "default"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://auth.iam.experience.hyland.com/idp/connect/token",
+					"protocol": "https",
+					"host": [
+						"auth",
+						"iam",
+						"experience",
+						"hyland",
+						"com"
+					],
+					"path": [
+						"idp",
+						"connect",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "HealthCheck",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/healthy",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"healthy"
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "Retrieve available actions",
 			"request": {
 				"auth": {
@@ -112,6 +215,26 @@
 			"response": []
 		},
 		{
+			"name": "Upload file",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "file",
+					"file": {
+						"src": ""
+					}
+				},
+				"url": {
+					"raw": "{{presignedUrl}}",
+					"host": [
+						"{{presignedUrl}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "Content processing",
 			"event": [
 				{
@@ -187,26 +310,6 @@
 			"response": []
 		},
 		{
-			"name": "Upload file",
-			"request": {
-				"method": "PUT",
-				"header": [],
-				"body": {
-					"mode": "file",
-					"file": {
-						"src": ""
-					}
-				},
-				"url": {
-					"raw": "{{presignedUrl}}",
-					"host": [
-						"{{presignedUrl}}"
-					]
-				}
-			},
-			"response": []
-		},
-		{
 			"name": "Retrieve result by ID",
 			"request": {
 				"auth": {
@@ -235,109 +338,6 @@
 						"process",
 						"{{jobID}}",
 						"results"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "HealthCheck",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "{{baseURL}}/healthy",
-					"host": [
-						"{{baseURL}}"
-					],
-					"path": [
-						"healthy"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Authorize",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"exec": [
-							"// Parse the response body",
-							"var response = pm.response.json();",
-							"",
-							"// Check if the response contains the token",
-							"if (response.access_token) { ",
-							"    // Alternatively, store as a collection variable",
-							"    pm.environment.set(\"auth_token\", response.access_token);",
-							"    console.log(\"Token stored successfully: \" + response.access_token);",
-							"} else {",
-							"    console.log(\"Token not found in response!\");",
-							"}"
-						],
-						"type": "text/javascript",
-						"packages": {},
-						"requests": {}
-					}
-				}
-			],
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
-						{
-							"key": "token",
-							"value": "{{auth_token}}",
-							"type": "string"
-						},
-						{
-							"key": "undefined",
-							"type": "any"
-						}
-					]
-				},
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "urlencoded",
-					"urlencoded": [
-						{
-							"key": "client_id",
-							"value": "your-id",
-							"type": "default"
-						},
-						{
-							"key": "client_secret",
-							"value": "your-secret",
-							"type": "default"
-						},
-						{
-							"key": "grant_type",
-							"value": "client_credentials",
-							"type": "default"
-						},
-						{
-							"key": "scope",
-							"value": "environment_authorization",
-							"type": "default"
-						}
-					]
-				},
-				"url": {
-					"raw": "https://auth.iam.experience.hyland.com/idp/connect/token",
-					"protocol": "https",
-					"host": [
-						"auth",
-						"iam",
-						"experience",
-						"hyland",
-						"com"
-					],
-					"path": [
-						"idp",
-						"connect",
-						"token"
 					]
 				}
 			},
