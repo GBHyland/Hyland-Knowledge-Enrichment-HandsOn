@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "232c2786-80cb-4fa5-bfd3-08f62eb358d6",
+		"_postman_id": "a31e18cd-9a12-41d1-8d2e-29897b41af3a",
 		"name": "CIC-KE-Collections",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "40985835"
@@ -289,7 +289,82 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n \"objectKeys\": [\"contents/4c9b66de-fc0b-4c43-8fb1-40efb689bf72/62c4b370-6d87-46c6-820e-4c26366e82c3/62c4b370-6d87-46c6-820e-4c26366e82c3\"],\n \"actions\": [\"text-summarization\"]\n}",
+					"raw": "{\n    \"objectKeys\": [\n        \"contents/4c9b66de-fc0b-4c43-8fb1-40efb689bf72/24dd0515-04bc-42fe-b164-fe6437e411dc/24dd0515-04bc-42fe-b164-fe6437e411dc\"\n    ],\n    \"actions\": [\n        \"text-summarization\"\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/content/process",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"content",
+						"process"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Content processing - metadata",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// Parse the response body\r",
+							"var response = pm.response?.json().processingId;\r",
+							"\r",
+							"// Check if the response contains the token\r",
+							"if (response) { \r",
+							"    // Alternatively, store as a collection variable\r",
+							"    pm.environment.set(\"jobID\", response);\r",
+							"    console.log(\"ResultID: \" + response);\r",
+							"} else {\r",
+							"    console.log(\"ResultID not found in response!\");\r",
+							"}"
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{auth_token}}",
+							"type": "string"
+						},
+						{
+							"key": "undefined",
+							"type": "any"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"objectKeys\": [\n        \"{{objectKey}}\"\n    ],\n    \"actions\": [\n        \"text-metadata-generation\"\n    ],\n    \"kSimilarMetadata\": [\n        {\n            \"claim\": {\n                \"manufacturer\": \"Pontiac\",\n                \"model\": \"Firebird\",\n                \"color\": \"red\",\n                \"year\": \"1992\",\n                \"car_part\": \"bumper\",\n                \"damage_type\": \"minimal\",\n                \"damage_severity\": \"low\",\n                \"confidence_score\": \"10\"\n            }\n        }\n    ]\n}",
 					"options": {
 						"raw": {
 							"language": "json"
