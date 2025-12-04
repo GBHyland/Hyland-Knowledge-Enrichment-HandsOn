@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "a31e18cd-9a12-41d1-8d2e-29897b41af3a",
+		"_postman_id": "11b9fb7a-717e-4f4d-b52d-4ea662287634",
 		"name": "CIC-KE-Collections",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "40985835"
@@ -195,7 +195,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{baseURL}}/files/upload/presigned-url?contentType=application%2Fpdf",
+					"raw": "{{baseURL}}/files/upload/presigned-url?contentType=image%2Fjpeg",
 					"host": [
 						"{{baseURL}}"
 					],
@@ -207,7 +207,7 @@
 					"query": [
 						{
 							"key": "contentType",
-							"value": "application%2Fpdf"
+							"value": "image%2Fjpeg"
 						}
 					]
 				}
@@ -289,7 +289,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"objectKeys\": [\n        \"contents/4c9b66de-fc0b-4c43-8fb1-40efb689bf72/24dd0515-04bc-42fe-b164-fe6437e411dc/24dd0515-04bc-42fe-b164-fe6437e411dc\"\n    ],\n    \"actions\": [\n        \"text-summarization\"\n    ]\n}",
+					"raw": "{\n    \"objectKeys\": [\n        \"{{objectKey}}\"\n    ],\n    \"actions\": [\n        \"image-description\",\"named-entity-recognition-image\"\n    ]\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -364,7 +364,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"objectKeys\": [\n        \"{{objectKey}}\"\n    ],\n    \"actions\": [\n        \"text-metadata-generation\"\n    ],\n    \"kSimilarMetadata\": [\n        {\n            \"claim\": {\n                \"manufacturer\": \"Pontiac\",\n                \"model\": \"Firebird\",\n                \"color\": \"red\",\n                \"year\": \"1992\",\n                \"car_part\": \"bumper\",\n                \"damage_type\": \"minimal\",\n                \"damage_severity\": \"low\",\n                \"confidence_score\": \"10\"\n            }\n        }\n    ]\n}",
+					"raw": "{\n    \"objectKeys\": [\n        \"{{objectKey}}\"\n    ],\n    \"actions\": [\n        \"image-description\",\"text-metadata-generation\"\n    ],\n    \"kSimilarMetadata\": [\n        {\n            \"claim\": {\n                \"manufacturer\": \"Samsung\",\n                \"model\": \"s22\",\n                \"color\": \"red\",\n                \"year\": \"1990\",\n                \"damaged part\": \"frame\",\n                \"damage type\": \"minimal\",\n                \"damage severity\": \"low\",\n                \"confidence_score\": \"10\"\n            }\n        }\n    ]\n}",
 					"options": {
 						"raw": {
 							"language": "json"
