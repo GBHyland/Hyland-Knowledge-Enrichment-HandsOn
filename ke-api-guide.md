@@ -140,13 +140,11 @@ The health endpoint is included in the provided Bruno collection. Its behavior c
 
 ## Part 3 — Upload and process a PDF
 
-**API workflow:** [KE documentation — Getting Started](https://hyland.github.io/ContentIntelligence-Docs/KnowledgeEnrichment)
+**API workflow:** [KE documentation — Enriching Content](https://hyland.github.io/ContentIntelligence-Docs/KnowledgeEnrichment/guides/enriching-content)
 
 ### 6. Create `PresignedUrl`
 
 **Why?** You don't send a large file in the processing request. First, KE gives you a temporary, signed URL to upload the file into storage, along with an `objectKey` to identify it later.
-
-**API reference:** [Get a presigned URL for uploading a file](https://hyland.github.io/ContentIntelligence-Docs/KnowledgeEnrichment/quickstart#3-curate-a-document-data-curation-api)
 
 1. Create a **GET** request named **PresignedUrl**.
 2. URL: `{{baseURL}}/files/upload/presigned-url`
@@ -186,8 +184,6 @@ The health endpoint is included in the provided Bruno collection. Its behavior c
 
 **Why?** Uploading a file only stores it. This request tells KE **which uploaded file** to process and **which enrichment actions** to run.
 
-**API reference:** [Process content asynchronously](https://hyland.github.io/ContentIntelligence-Docs/KnowledgeEnrichment/Reference/Context%20API/Endpoints/process-content-asynchronously)
-
 1. Create a **POST** request named **Content processing**.
 2. URL: `{{baseURL}}/content/process`.
 3. Set **Auth → Bearer Token** to `{{auth_token}}`.
@@ -222,8 +218,6 @@ The health endpoint is included in the provided Bruno collection. Its behavior c
 ### 9. Create `Retrieve result by ID`
 
 **Why?** Processing happens asynchronously. This request checks the job and, when it finishes, retrieves the enriched output.
-
-**API reference:** [Get content-processing results](https://hyland.github.io/ContentIntelligence-Docs/KnowledgeEnrichment/Reference/Context%20API/Endpoints/get-content-processing-results)
 
 1. Create a **GET** request named **Retrieve result by ID**.
 2. URL: `{{baseURL}}/content/process/{{jobID}}/results`.
@@ -272,7 +266,6 @@ You'll now run the same sequence without building another collection. This illus
 
 **Goal:** Explore how KE can produce metadata guided by example fields. This is useful when an application needs structured values for search, filtering, classification, or downstream automation rather than a free-form description.
 
-**API reference:** [Process content asynchronously](https://hyland.github.io/ContentIntelligence-Docs/KnowledgeEnrichment/Reference/Context%20API/Endpoints/process-content-asynchronously)
 
 ### 12. Create `Content processing - metadata`
 
