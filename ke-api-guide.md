@@ -13,7 +13,7 @@ In this workshop, you'll use **Bruno** to build and send HTTP requests to the Hy
 
 ## Before you begin
 
-1. Install [Bruno](https://www.usebruno.com/) on your computer.
+1. Install [Bruno - Hyland](https://myhub.hyland.com/search?term=bruno+download&sid=5d9db12a9d3e9a061e321750189a576b&query_origin=typed) -or- [Bruno - Public](https://www.usebruno.com/) on your computer.
 2. Ensure you have access to a Hyland Content Innovation Cloud environment, a **Service User**, and an **External Application** authorized for Knowledge Enrichment. If needed, follow this repository's [CIC configuration guide](./cic-config.md).
 3. Obtain the external application's **client ID** and **client secret** from your instructor or your own environment.
 4. Have a PDF and a JPEG image ready. This repository includes sample content in [Files to Upload](./Files%20to%20Upload/), including `veh-dmg-rep.pdf`.
@@ -75,7 +75,7 @@ Bruno replaces `{{variableName}}` in a request with the value from the active en
 
 **Why?** KE endpoints require authorization. This request exchanges your application's client credentials for a temporary bearer token.
 
-**API reference:** [Authentication](https://hyland.github.io/ContentIntelligence-Docs/KnowledgeEnrichment/Overview/Getting%20Started/authentication)
+**API reference:** [Authentication](https://hyland.github.io/ContentIntelligence-Docs/KnowledgeEnrichment/guides/authentication)
 
 1. Add a new HTTP request named **Authorize**.
 2. Set the method to **POST** and the URL to:
