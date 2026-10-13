@@ -127,7 +127,7 @@ The health endpoint is included in the provided Bruno collection. Its behavior c
 
 **Why?** Before choosing how to enrich content, ask KE which processing actions it currently supports. This avoids relying on a potentially outdated list.
 
-**API reference:** [Get available process-content actions](https://hyland.github.io/ContentIntelligence-Docs/KnowledgeEnrichment/Reference/Context%20API/Endpoints/get-available-process-content-actions)
+**API reference:** [Get available process-content actions](https://hyland.github.io/ContentIntelligence-Docs/KnowledgeEnrichment/guides/testing-your-integration#step-5-check-available-actions)
 
 1. Create a **GET** request named **Retrieve available actions**.
 2. URL: `{{baseURL}}/content/process/actions`
