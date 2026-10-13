@@ -146,7 +146,7 @@ The health endpoint is included in the provided Bruno collection. Its behavior c
 
 **Why?** You don't send a large file in the processing request. First, KE gives you a temporary, signed URL to upload the file into storage, along with an `objectKey` to identify it later.
 
-**API reference:** [Get a presigned URL for uploading a file](https://hyland.github.io/ContentIntelligence-Docs/KnowledgeEnrichment/Reference/Context%20API/Endpoints/get-a-presigned-url-for-uploading-a-file)
+**API reference:** [Get a presigned URL for uploading a file](https://hyland.github.io/ContentIntelligence-Docs/KnowledgeEnrichment/quickstart#3-curate-a-document-data-curation-api)
 
 1. Create a **GET** request named **PresignedUrl**.
 2. URL: `{{baseURL}}/files/upload/presigned-url`
