@@ -23,5 +23,5 @@ If you have not done this, [visit this guide first](./cic-config.md), otherwise 
 ---
 
 ### Ready to Learn!
-If you already have a **Service User** and an **External Application** configured for Knowledge Enrichment in the Content Innovation Cloud, you may start with the [Knowledge Enrichment API Guide](./knowledge-enrichment-api-postman.md).
+If you already have a **Service User** and an **External Application** configured for Knowledge Enrichment in the Content Innovation Cloud, you may start with the [Knowledge Enrichment API Guide](./ke-api-guide.md).
 
