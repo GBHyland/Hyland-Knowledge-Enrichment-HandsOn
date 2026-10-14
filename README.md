@@ -11,8 +11,8 @@ This guide will cover the following topics:
 ---
 
 ### Get the Required Software
-If you're interested in developing this content on your own machine you'll need the Postman Application. This application allows you to send HTTP requests. [Download here](https://www.postman.com/downloads/)  
-- Once downloaded you'll need to create a free account, which can be done using the icon in the top-right corner of the Postman app.
+To leverage Knowledge Enrichment's APIs, you'll need an HTTP Application. This guide uses Bruno. 
+- Install [Bruno - Hyland](https://myhub.hyland.com/search?term=bruno+download&sid=5d9db12a9d3e9a061e321750189a576b&query_origin=typed) -or- [Bruno - Public](https://www.usebruno.com/) on your computer.
 
 ---
 
