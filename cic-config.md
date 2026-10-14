@@ -37,6 +37,6 @@ The above steps created both the Service User and the External Application neede
 
 ### Knowledge Enrichment API
 After completing the steps above, you're ready to engage with the API.
-[Knowledge Enrichment API Guide](./knowledge-enrichment-api-postman.md)
+[Knowledge Enrichment API Guide](./ke-api-guide.md)
 
 ---
