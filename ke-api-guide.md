@@ -176,7 +176,9 @@ The health endpoint is included in the provided Bruno collection. Its behavior c
 3. Set **Auth** to **No Auth**. The presigned URL already contains its own authorization information; **do not send the KE bearer token to the storage URL**.
 4. Under **Body**, select **File** (binary file upload) and choose `veh-dmg-rep.pdf` from [Files to Upload](./Files%20to%20Upload/).
 5. If Bruno allows you to set the file content type, use `application/pdf`. Ensure any `Content-Type` header matches the MIME type requested when generating the URL.
-6. Click **Send**. Look for a successful 2xx response (commonly **200 OK**). A successful upload may have an empty response body.
+6. Select the **Settings** Tab.
+7. Ensure **URL Encoding** is toggled **OFF**.
+8. Click **Send**. Look for a successful 2xx response (commonly **200 OK**). A successful upload may have an empty response body.
 
 **Important:** Don't change or manually re-encode the signed query string. If the URL expires or the upload fails with a signature-related error, run **PresignedUrl** again and retry promptly. The uploaded file and `objectKey` must come from the same presigned-URL request.
 
