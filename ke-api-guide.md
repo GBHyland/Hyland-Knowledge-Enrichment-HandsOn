@@ -20,20 +20,41 @@ In this workshop, you'll use **Bruno** to build and send HTTP requests to the Hy
 
 **Security:** Never commit client secrets, bearer tokens, or presigned URLs to GitHub. Your environment variables for tokens and upload URLs should begin empty. Bruno collection files are stored locally, so review files before committing or sharing them.
 
+
 ## How the requests fit together
+
+To process content with Knowledge Enrichment, we'll first authenticate with the service, then execute four API requests in sequence to upload, process, and retrieve the results.
+
+### Step 1: Authentication
+
+Before interacting with the Knowledge Enrichment APIs, we must obtain an authorization token.
+
+| Bruno request | Method | Purpose | Value saved for later |
+| --- | --- | --- | --- |
+| Authorize | POST | Exchange application credentials for an access token | `auth_token` |
+
+### Step 2: Processing a KE Job
+
+These four API requests make up the core Knowledge Enrichment workflow. **Execute them in the order shown.**
 
 | Order | Bruno request | Method | Purpose | Value saved for later |
 | --- | --- | --- | --- | --- |
-| 1 | Authorize | POST | Exchange application credentials for a token | `auth_token` |
-| 2 | HealthCheck (optional) | GET | Check service health | — |
-| 3 | Retrieve available actions | GET | Discover supported processing actions | — |
-| 4 | PresignedUrl | GET | Get a temporary upload URL and content identifier | `presignedUrl`, `objectKey` |
-| 5 | Upload file | PUT | Upload the actual file bytes to storage | — |
-| 6 | Content processing | POST | Start enrichment with selected actions | `jobID` |
-| 7 | Retrieve result by ID | GET | Check status and read results | — |
-| 8 | Content processing - metadata (optional) | POST | Try structured metadata generation | `jobID` |
+| 1 | PresignedUrl | GET | Get a temporary URL for uploading content | `presignedUrl`, `objectKey` |
+| 2 | Upload file | PUT | Upload the file to storage using the presigned URL | — |
+| 3 | Content processing | POST | Submit the uploaded content for enrichment using selected actions | `jobID` |
+| 4 | Retrieve result by ID | GET | Check processing status and retrieve enrichment results | — |
 
-You'll create these requests in this order. **For the optional exercise, run request 8 and then run request 7 again** to retrieve the new job's results.
+### Optional API Requests
+
+These requests are not required to process a KE job but provide additional functionality and opportunities to explore the APIs.
+
+| Bruno request | Method | Purpose | Value saved for later |
+| --- | --- | --- | --- |
+| HealthCheck | GET | Verify that the Knowledge Enrichment service is responding | — |
+| Retrieve available actions | GET | Discover the enrichment actions supported by the service | — |
+| Content processing - metadata | POST | Explore structured metadata generation using additional processing actions | `jobID` |
+
+**Note:** Authorization tokens expire and may need to be refreshed before submitting additional requests.
 
 ---
 
